@@ -6,33 +6,84 @@ date: 2022-10-24
 type: landing
 
 sections:
-  - block: resume-biography-3
-    content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
-      username: me
-      text: ''
-      # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
-      headings:
-        about: ''
-        education: ''
-        interests: ''
+
+  - block: hero
+    id: intro
     design:
-      # Use the new Gradient Mesh which automatically adapts to the selected theme colors
+      size: compact
+
+      no_padding: false
       background:
-        gradient_mesh:
-          enable: true
+        color: "#f5993d"
+        gradient:
+          type: linear
+          start: rgba(3, 142, 192,0.8)
+          end: transparent
+          position: 50% - 10%
+          shape: ellipse
+          size: 80% 80%
+      css_class: dark
+    content:
+      eyebrow: "This is eyebrow text"
+      
+      announcement:
+        badge:
+          text: NEW
+          color: primary
+        text: "This is announcement text"
+        link:
+          text: Read ACUUS news
+          url: /blog/acuus
 
-      # Name heading sizing to accommodate long or short names
-      name:
-        size: md # Options: xs, sm, md, lg (default), xl
+      title:  DiNum-GEO Landing page title
+      text: DiNum-GEO Landing page text
 
-      # Avatar customization
-      avatar:
-        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
-        shape: circle # Options: circle (default), square, rounded
+      primary_action:
+        text: Go to news
+        url: /blog/
+        icon: hero/newspaper
+        style: solid
+
+      secondary_action:
+        text: Read the docs
+        url: https://docs.hugoblox.com
+        icon: book-open
+        style: solid
+
+  - block: collection
+    id: news
+
+    content:
+      title: Recent News
+      subtitle: ''
+      text: ''
+      # Page type to display. E.g. post, talk, publication...
+      page_type: blog
+      # Choose how many pages you would like to display (0 = all pages)
+      count: 4
+      # Filter on criteria
+      filters:
+        author: ''
+        category: ''
+        tag: ''
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+        publication_type: ''
+      # Choose how many pages you would like to offset by
+      offset: 0
+      # Page order: descending (desc) or ascending (asc) date.
+      order: desc
+    design:
+      # Choose a layout view
+      view: article-grid
+      # Reduce spacing
+      spacing:
+        padding: [0,0,0, 20]
+
+
+
+
   - block: markdown
     content:
       title: '📚 My Research'
@@ -75,35 +126,7 @@ sections:
           - events
     design:
       view: card
-  - block: collection
-    id: news
-    content:
-      title: Recent News
-      subtitle: ''
-      text: ''
-      # Page type to display. E.g. post, talk, publication...
-      page_type: blog
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 10
-      # Filter on criteria
-      filters:
-        author: ''
-        category: ''
-        tag: ''
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ''
-      # Choose how many pages you would like to offset by
-      offset: 0
-      # Page order: descending (desc) or ascending (asc) date.
-      order: desc
-    design:
-      # Choose a layout view
-      view: card
-      # Reduce spacing
-      spacing:
-        padding: [0, 0, 0, 0]
+
   - block: cta-card
     demo: true # Only display this section in the HugoBlox Kit demo site
     content:
