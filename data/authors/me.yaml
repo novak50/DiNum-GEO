@@ -14,5 +14,7 @@ links:
     label: E-mail
   - icon: academicons/orcid
     url: https://orcid.org/0009-0001-2627-8874
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Novak-Joksimovic
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/novak-joksimovic/

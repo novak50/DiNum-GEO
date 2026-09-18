@@ -21,9 +21,11 @@ sections:
       text: >-
         <div class="partner-marquee" aria-label="Partner institutions">
           <div class="partner-track">
+            <div class="partner-item"><img src="/media/partners/ub_logo.png" alt="University of Belgrade"></div>
             <div class="partner-item"><img src="/media/partners/grf_logo.png" alt="Faculty of Civil Engineering, University of Belgrade"></div>
             <div class="partner-item"><img src="/media/partners/bgs_logo.png" alt="British Geological Survey"></div>
             <div class="partner-item"><img src="/media/partners/durham_logo.png" alt="Durham University"></div>
+            <div class="partner-item" aria-hidden="true"><img src="/media/partners/ub_logo.png" alt=""></div>
             <div class="partner-item" aria-hidden="true"><img src="/media/partners/grf_logo.png" alt=""></div>
             <div class="partner-item" aria-hidden="true"><img src="/media/partners/bgs_logo.png" alt=""></div>
             <div class="partner-item" aria-hidden="true"><img src="/media/partners/durham_logo.png" alt=""></div>
