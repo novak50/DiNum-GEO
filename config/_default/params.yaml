@@ -21,8 +21,10 @@ hugoblox:
     # Short tagline displayed on your site
     tagline: "Digital and Numerical Model Integration for Optimization in Geotechnics"
     # Site meta description for search engines and social sharing
-    description: "The highly-customizable Hugo Academic theme powered by HugoBlox
-      Kit. Easily create your personal academic website."
+    description: "DiNum-GEO is a research project developing a computing
+      framework linking digital ground information models with probabilistic
+      numerical simulations of underground structures, with a further link
+      towards Building Information Models (BIM)."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
       twitter: "" # Twitter/X handle for Twitter Cards (without @)
@@ -33,14 +35,14 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   theme:
     # Mode: 'light', 'dark', or 'system' (follows OS preference)
-    mode: system
+    mode: light
     # Theme pack: name from data/themes/ or { light: "x", dark: "y" } for mix-and-match
-    pack: "default"
-    # Optional: Override theme pack colors
-    colors:
-      primary: "black" # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
-      secondary: "teal"
-      neutral: "slate" # Affects gray utilities (text-gray-*, bg-gray-*)
+    # "minimal" is a clean, GitHub Light-inspired palette: high-contrast dark
+    # text on a white background, tested for readability across many sites.
+    pack: "minimal"
+    # Optional: Override theme pack colors (left empty so the "minimal" pack's
+    # own tuned light-mode colors are used as-is)
+    colors: {}
     # Optional: Mode-specific color overrides
     colors_light: {}
     colors_dark: {}
