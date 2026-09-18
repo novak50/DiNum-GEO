@@ -21,14 +21,14 @@ sections:
       text: >-
         <div class="partner-marquee" aria-label="Partner institutions">
           <div class="partner-track">
-            <div class="partner-item"><img src="/media/partners/ub_logo.png" alt="University of Belgrade"></div>
-            <div class="partner-item"><img src="/media/partners/grf_logo.png" alt="Faculty of Civil Engineering, University of Belgrade"></div>
-            <div class="partner-item"><img src="/media/partners/bgs_logo.png" alt="British Geological Survey"></div>
-            <div class="partner-item"><img src="/media/partners/durham_logo.png" alt="Durham University"></div>
-            <div class="partner-item" aria-hidden="true"><img src="/media/partners/ub_logo.png" alt=""></div>
-            <div class="partner-item" aria-hidden="true"><img src="/media/partners/grf_logo.png" alt=""></div>
-            <div class="partner-item" aria-hidden="true"><img src="/media/partners/bgs_logo.png" alt=""></div>
-            <div class="partner-item" aria-hidden="true"><img src="/media/partners/durham_logo.png" alt=""></div>
+            <div class="partner-item">{{< relimg "media/partners/ub_logo.png" "University of Belgrade" >}}</div>
+            <div class="partner-item">{{< relimg "media/partners/grf_logo.png" "Faculty of Civil Engineering, University of Belgrade" >}}</div>
+            <div class="partner-item">{{< relimg "media/partners/bgs_logo.png" "British Geological Survey" >}}</div>
+            <div class="partner-item">{{< relimg "media/partners/durham_logo.png" "Durham University" >}}</div>
+            <div class="partner-item" aria-hidden="true">{{< relimg "media/partners/ub_logo.png" "" >}}</div>
+            <div class="partner-item" aria-hidden="true">{{< relimg "media/partners/grf_logo.png" "" >}}</div>
+            <div class="partner-item" aria-hidden="true">{{< relimg "media/partners/bgs_logo.png" "" >}}</div>
+            <div class="partner-item" aria-hidden="true">{{< relimg "media/partners/durham_logo.png" "" >}}</div>
           </div>
         </div>
         <style>
