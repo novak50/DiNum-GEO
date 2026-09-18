@@ -11,19 +11,6 @@ sections:
         with a further link planned towards Building Information Models
         (BIM).
 
-  - block: team-showcase
-    id: team
-    content:
-      title: "Team"
-      text: "The people currently working on DiNum-GEO."
-    design:
-      show_role: true
-      show_organizations: false
-      show_interests: false
-      show_social: false
-      max_columns: 3
-      align: center
-
   - block: content-collection
     id: activities
     content:
