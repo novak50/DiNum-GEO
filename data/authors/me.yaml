@@ -8,3 +8,11 @@ name:
 postnominals:
   - MSc
 role: Teaching Assistant
+links:
+  - icon: at-symbol
+    url: mailto:njoksimovic@grf.bg.ac.rs
+    label: E-mail
+  - icon: academicons/orcid
+    url: https://orcid.org/0009-0001-2627-8874
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/novak-joksimovic/

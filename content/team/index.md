@@ -21,14 +21,12 @@ sections:
       text: >-
         <div class="partner-marquee" aria-label="Partner institutions">
           <div class="partner-track">
-            <div class="partner-item">University of Belgrade</div>
-            <div class="partner-item">Faculty of Civil Engineering, Belgrade</div>
-            <div class="partner-item">British Geological Survey</div>
-            <div class="partner-item">Durham University</div>
-            <div class="partner-item" aria-hidden="true">University of Belgrade</div>
-            <div class="partner-item" aria-hidden="true">Faculty of Civil Engineering, Belgrade</div>
-            <div class="partner-item" aria-hidden="true">British Geological Survey</div>
-            <div class="partner-item" aria-hidden="true">Durham University</div>
+            <div class="partner-item"><img src="/media/partners/grf_logo.png" alt="Faculty of Civil Engineering, University of Belgrade"></div>
+            <div class="partner-item"><img src="/media/partners/bgs_logo.png" alt="British Geological Survey"></div>
+            <div class="partner-item"><img src="/media/partners/durham_logo.png" alt="Durham University"></div>
+            <div class="partner-item" aria-hidden="true"><img src="/media/partners/grf_logo.png" alt=""></div>
+            <div class="partner-item" aria-hidden="true"><img src="/media/partners/bgs_logo.png" alt=""></div>
+            <div class="partner-item" aria-hidden="true"><img src="/media/partners/durham_logo.png" alt=""></div>
           </div>
         </div>
         <style>
@@ -55,18 +53,17 @@ sections:
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 64px;
-            padding: 0 1.5rem;
+            height: 84px;
+            padding: 0.75rem 2rem;
             border-radius: 0.75rem;
             background: rgba(0, 0, 0, 0.04);
-            color: #374151;
-            font-weight: 600;
-            font-size: 0.95rem;
             white-space: nowrap;
           }
           .partner-item img {
-            max-height: 40px;
+            max-height: 52px;
+            max-width: 220px;
             width: auto;
+            height: auto;
             filter: grayscale(1);
             opacity: 0.75;
             transition: filter 0.2s, opacity 0.2s;

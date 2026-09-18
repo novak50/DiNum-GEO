@@ -8,3 +8,13 @@ name:
 postnominals:
   - MSc
 role: Teaching Assistant
+links:
+  - icon: at-symbol
+    url: mailto:kmicic@grf.bg.ac.rs
+    label: E-mail
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0002-4101-4412
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Ksenija-Micic
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/ksenija-mici%C4%87-886723222/

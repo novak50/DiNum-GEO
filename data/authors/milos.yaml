@@ -8,3 +8,13 @@ name:
 postnominals:
   - PhD
 role: Assistant Professor
+links:
+  - icon: at-symbol
+    url: mailto:mimarjanovic@grf.bg.ac.rs
+    label: E-mail
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0002-7968-3873
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Milos-Marjanovic-5
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/milo%C5%A1-marjanovi%C4%87-21590735/
