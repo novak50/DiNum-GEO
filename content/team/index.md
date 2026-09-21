@@ -5,7 +5,8 @@ sections:
     id: team
     content:
       title: "Team"
-      text: "The people currently working on DiNum-GEO."
+      user_groups:
+        - Team
     design:
       show_role: true
       show_organizations: false

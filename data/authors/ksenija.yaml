@@ -1,6 +1,8 @@
 schema: hugoblox/author/v1
 slug: km
 is_owner: false
+user_groups:
+  - Team
 name:
   display: Ksenija Micić
   given: Ksenija
