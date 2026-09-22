@@ -1,4 +1,19 @@
 schema: hugoblox/author/v1
 is_owner: false
+user_groups:
+  - Team
 name:
   display: Jelena Ninić
+  given: Jelena
+  family: Ninić
+role: Professor
+links:
+  - icon: at-symbol
+    url: mailto:jelena.ninic@durham.ac.uk
+    label: E-mail
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0002-0272-3208
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Jelena-Ninic
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/jelena-ninic-27848023/

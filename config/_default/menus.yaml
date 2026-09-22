@@ -16,7 +16,7 @@ main:
   - name: Activities
     url: /#activities
     weight: 13
-  - name: Papers
+  - name: Publications
     url: papers/
     weight: 20
   - name: Contact

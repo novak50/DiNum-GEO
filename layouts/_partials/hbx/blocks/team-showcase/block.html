@@ -96,6 +96,21 @@
     {{ $allProfiles = $allProfiles | append (dict "profile" $profile "profileData" $profileData) }}
   {{ end }}
 
+  {{/* Site override: figure out which /authors/<slug>/ pages actually
+       exist. A page only exists once someone is referenced in some
+       content's authors: field (it's an auto-generated taxonomy term
+       page) — a team member added before they co-author anything won't
+       have one yet. site.GetPage on the urlized slug is unreliable here
+       because Hugo indexes these taxonomy terms by the raw (accented,
+       space-separated) term string, not the urlized slug, so instead we
+       just check the actual published permalinks. */}}
+  {{ $existingAuthorSlugs := slice }}
+  {{ with site.GetPage "/authors" }}
+    {{ range .Pages }}
+      {{ $existingAuthorSlugs = $existingAuthorSlugs | append (path.Base .RelPermalink) }}
+    {{ end }}
+  {{ end }}
+
   {{ $groups_raw := index $content "user_groups" }}
   {{ $groups := slice }}
   {{ if reflect.IsSlice $groups_raw }}
@@ -214,19 +229,24 @@
           {{ $profile := $groupProfile.profile }}
           {{ $avatar := $profile.avatar }}
           {{ $link := printf "authors/%s/" $profile.slug | relURL }}
+          {{ $linkExists := in $existingAuthorSlugs $profile.slug }}
           {{ $nameSource := $profile.name_given | default $profile.title | default "?" }}
           {{ $initial := cond (gt (len $nameSource) 0) (upper (substr $nameSource 0 1)) "?" }}
-          
+
           <div class="group relative">
             <div class="relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              
+
+              {{ if $linkExists }}
               <a href="{{ $link }}" class="block relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800" aria-label="{{ $profile.title }}">
+              {{ else }}
+              <div class="block relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800" aria-label="{{ $profile.title }}">
+              {{ end }}
                 {{ if $avatar }}
                   {{ $image := $avatar.Fit "600x600 Center q90" }}
-                  <img src="{{ $image.RelPermalink }}" 
-                       alt="{{ $profile.title }}" 
-                       width="{{ $image.Width }}" 
-                       height="{{ $image.Height }}" 
+                  <img src="{{ $image.RelPermalink }}"
+                       alt="{{ $profile.title }}"
+                       width="{{ $image.Width }}"
+                       height="{{ $image.Height }}"
                        loading="lazy"
                        class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 {{ else }}
@@ -234,13 +254,17 @@
                     {{ $initial }}
                   </div>
                 {{ end }}
-              </a>
-              
+              {{ if $linkExists }}</a>{{ else }}</div>{{ end }}
+
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                  {{ if $linkExists }}
                   <a href="{{ $link }}" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="{{ $profile.title }}">
                     {{ $profile.title }}
                   </a>
+                  {{ else }}
+                    {{ $profile.title }}
+                  {{ end }}
                 </h3>
                 
                 {{ $affiliations_raw := $profile.affiliations }}

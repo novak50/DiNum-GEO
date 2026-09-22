@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+is_owner: false
+user_groups:
+  - Team
+name:
+  display: Tijana Jovanović
+  given: Tijana
+  family: Jovanović
+role: Hydrological Modeller at BGS
+links:
+  - icon: at-symbol
+    url: mailto:tijj@bgs.ac.uk
+    label: E-mail
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0002-8779-096X
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/tijana-jovanovi%C4%87-66116163/
