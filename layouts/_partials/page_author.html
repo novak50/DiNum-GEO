@@ -1,4 +1,7 @@
-{{/* Author profile box (site override: horizontal layout with scroll) */}}
+{{/* Author profile box (site override: horizontal layout with scroll; only
+     Team-tagged profiles get a full linked card, everyone else is plain,
+     unlinked text so external co-authors aren't shown as project-team
+     members and don't link to a nonexistent profile page). */}}
 
 {{/* Don't show author box on normal pages or if author box disabled. */}}
 {{ if ne .Type "page" | and (not (or (eq site.Params.profile false) (eq .Params.profile false))) }}
@@ -18,9 +21,33 @@
   {{ range $idx, $slug := $authors }}
     {{ $profile := partial "functions/get_author_profile" $slug }}
     {{ if $profile.has_data }}
-      <div class="flex-shrink-0">
-        {{ partial "page_author_card" (dict "profile" $profile "page" .) }}
-      </div>
+
+      {{/* Is this profile explicitly tagged as a Team member (data/authors/*.yaml: user_groups: [Team])? */}}
+      {{ $isTeam := false }}
+      {{ $ug := $profile.user_groups }}
+      {{ if reflect.IsSlice $ug }}
+        {{ range $ug }}{{ if eq (printf "%v" .) "Team" }}{{ $isTeam = true }}{{ end }}{{ end }}
+      {{ else if eq (printf "%T" $ug) "string" }}
+        {{ if eq $ug "Team" }}{{ $isTeam = true }}{{ end }}
+      {{ end }}
+
+      {{ if $isTeam }}
+        <div class="flex-shrink-0">
+          {{ partial "page_author_card" (dict "profile" $profile "page" .) }}
+        </div>
+      {{ else }}
+        {{/* Non-team co-author: plain, unlinked text — not a project-team
+             card, and not a link to a profile page. */}}
+        <div class="flex-shrink-0 self-center px-2">
+          <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+            {{ i18n "authors" }}
+          </div>
+          <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+            {{ $profile.title }}
+          </div>
+        </div>
+      {{ end }}
+
     {{ end }}
   {{ end }}
   </div>
