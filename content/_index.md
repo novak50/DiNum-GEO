@@ -15,7 +15,6 @@ sections:
     id: activities
     content:
       title: "Recent Activities"
-      text: "News and updates from the project."
       filters:
         folders:
           - blog

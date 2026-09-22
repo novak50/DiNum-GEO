@@ -4,6 +4,8 @@ date: 2025-10-17
 
 authors:
   - me
+  - ksenija
+  - milos
 
 categories:
   - Research

@@ -3,7 +3,7 @@ title: ZGSD Paper presentation
 date: 2025-12-24
 
 authors:
-  - me
+  - ksenija
 
 categories:
   - Research

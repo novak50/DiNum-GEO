@@ -4,6 +4,10 @@ date: 2025-10-17
 
 authors:
   - me
+  - ksenija
+  - milos
+  - "Tijana Jovanović"
+  - "Jelena Ninić"
 
 categories:
   - Research

@@ -3,7 +3,7 @@ title: SGD Award
 date: 2026-03-06
 
 authors:
-  - me
+  - ksenija
 
 categories:
   - Research
