@@ -9,7 +9,20 @@ name:
   family: Micić
 postnominals:
   - MSc
-role: Teaching Assistant
+role: Team Member
+bio: >-
+  Ksenija is a Teaching and Research Assistant at the University of
+  Belgrade, Faculty of Civil Engineering, with an educational background in
+  geological engineering and ongoing doctoral research in this field. Her
+  research is focused on the development of digital ground models and
+  their integration into numerical modelling for complex and heterogeneous
+  geological and geotechnical conditions, with particular emphasis on
+  lithological and geotechnical spatial variability and uncertainty. Her
+  rising expertise in geological engineering, geoinformatics, soil and rock
+  mechanics provides the geological foundation of the DiNum-GEO framework.
+  Her main contribution addresses the development of the ground
+  information models (GIMs), implementation of geostatistical approaches
+  for spatial variability and uncertainty quantification.
 links:
   - icon: at-symbol
     url: mailto:kmicic@grf.bg.ac.rs

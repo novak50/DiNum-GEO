@@ -9,7 +9,19 @@ name:
   family: Joksimović
 postnominals:
   - MSc
-role: Teaching Assistant
+role: Team Member
+bio: >-
+  Novak is a Teaching and Research Assistant at the University of Belgrade,
+  Faculty of Civil Engineering, with an educational background in
+  structural engineering and professional experience in structural design.
+  His doctoral research focuses on the complexities of tunnelling in
+  heterogeneous and anisotropic geotechnical environments. His rising
+  expertise combines tunnel engineering, rock mechanics and advanced
+  numerical modelling, together with a strong interest in programming and
+  model automation. His multidisciplinary profile is particularly relevant
+  to the development of numerical models of the underground structures,
+  where geological and geotechnical complexity, structural response and
+  computational modelling need to be considered within a single framework.
 links:
   - icon: at-symbol
     url: mailto:njoksimovic@grf.bg.ac.rs

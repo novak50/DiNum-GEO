@@ -6,7 +6,21 @@ name:
   display: Jelena Ninić
   given: Jelena
   family: Ninić
-role: Professor at Durham University
+role: Project Partner
+bio: >-
+  Jelena is a Professor in Digital Engineering at the Department of
+  Engineering, Durham University, UK. Her research integrates
+  computational mechanics, digital engineering, Building Information
+  Modelling (BIM), Digital Twins, machine learning and intelligent
+  computing, with a strong focus on underground construction and
+  soil-structure interaction. She has extensive experience in developing
+  parametric information models, advanced finite element formulations,
+  automated design-to-analysis workflows and BIM-based modelling of
+  tunnelling projects. Her expertise is central to the development of
+  interoperable integrated digital and numerical modelling workflows
+  through BIM, as envisioned by DiNum-GEO. She provides key knowledge in
+  advanced numerical modelling, BIM integration, automation and the
+  broader Digital Twin concept underlying the project.
 links:
   - icon: at-symbol
     url: mailto:jelena.ninic@durham.ac.uk

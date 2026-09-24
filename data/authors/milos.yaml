@@ -9,7 +9,20 @@ name:
   family: Marjanović
 postnominals:
   - PhD
-role: Assistant Professor
+role: Principal Investigator
+bio: >-
+  Miloš is an Assistant Professor at the University of Belgrade, Faculty of
+  Civil Engineering, and the Principal Investigator of DiNum-GEO. His
+  expertise combines geotechnical engineering, soil mechanics and advanced
+  numerical modelling of foundations and underground structures with FEM. He
+  also has extensive experience in programming and developing the integrated
+  solutions for automation of numerical simulations. Within DiNum-GEO, his
+  geotechnical expertise paired with computational and software-development
+  experience is particularly important for the advancement of numerical
+  models and the integration of digital tools. He supervises the development
+  of the project's digital and numerical models and acts as the lead
+  designer of the integrated solutions that form the core of the automated
+  modelling framework.
 links:
   - icon: at-symbol
     url: mailto:mimarjanovic@grf.bg.ac.rs

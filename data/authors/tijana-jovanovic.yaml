@@ -6,7 +6,20 @@ name:
   display: Tijana Jovanović
   given: Tijana
   family: Jovanović
-role: Hydrological Modeller at BGS
+role: Project Partner
+bio: >-
+  Tijana is a surface and subsurface modeller at the British Geological
+  Survey, UK, with expertise in hydrological modelling, statistical
+  computing and the use of high-resolution geospatial data. Her experience
+  in integrating geospatial information into digital models and working
+  with public databases directly supports the development of DiNum-GEO's
+  ground models. Within the project, her modelling experience is
+  especially important for incorporating real-world geospatial data,
+  managing uncertainty and enabling model updates as new information
+  becomes available. Her contribution strengthens the data-driven
+  component of the project and helps connect advanced geoscientific
+  information modelling with numerical analysis and risk-aware design of
+  underground structures.
 links:
   - icon: at-symbol
     url: mailto:tijj@bgs.ac.uk
