@@ -1,0 +1,37 @@
+{{/* Homepage team strip: photo, name, role and affiliation; each links to the
+     member's card on the Team page (anchor added in the team-showcase override).
+     content: title, members (data/authors slugs, in display order), link, link_text */}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content }}
+{{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
+{{ $teamLink := $c.link | default "team/" }}
+
+<div class="dng-container">
+  {{ partial "about/heading.html" (dict "title" $c.title "text" $c.text "page" $page) }}
+  <div class="dng-team">
+    {{ range $slug := $c.members }}
+      {{ $p := partial "functions/get_author_profile" (dict "slug" $slug) }}
+      {{ $aff := "" }}
+      {{ with $p.affiliations }}
+        {{ $first := index . 0 }}
+        {{ if reflect.IsMap $first }}{{ $aff = $first.name }}{{ else }}{{ $aff = $first }}{{ end }}
+      {{ end }}
+      <a class="dng-member" href="{{ printf "%s#member-%s" $teamLink $p.slug | relURL }}">
+        <div class="dng-member__photo">
+          {{ with $p.avatar }}
+            {{ $img := .Fill "320x320 Center q85 webp" }}
+            <img src="{{ $img.RelPermalink }}" alt="{{ $p.title }}" width="160" height="160" loading="lazy">
+          {{ else }}
+            <span>{{ substr $p.title 0 1 }}</span>
+          {{ end }}
+        </div>
+        <p class="dng-member__name">{{ $p.title }}</p>
+        {{ with $p.role }}<p class="dng-member__role">{{ . }}</p>{{ end }}
+        {{ with $aff }}<p class="dng-member__aff">{{ . }}</p>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+  {{ with $c.link_text }}
+  <div class="dng-more"><a href="{{ $teamLink | relURL }}">{{ . }} <span aria-hidden="true">→</span></a></div>
+  {{ end }}
+</div>

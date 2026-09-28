@@ -1,5 +1,7 @@
 schema: hugoblox/author/v1
 is_owner: false
+# Order on the Team page (lower first)
+weight: 5
 user_groups:
   - Team
 name:
@@ -7,6 +9,8 @@ name:
   given: Tijana
   family: Jovanović
 role: Project Partner
+affiliations:
+  - name: British Geological Survey
 bio: >-
   Tijana is a surface and subsurface modeller at the British Geological
   Survey, UK, with expertise in hydrological modelling, statistical

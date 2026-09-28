@@ -1,0 +1,27 @@
+{{/* Homepage institutions: logo + name + mark (e.g. Leading SRO / Partner SRO).
+     The logo links to the institution's website (new tab); the name links to its
+     description on the Team page.
+     content: title, items: [{name, logo (path under static/), mark, highlight (filled badge),
+              website, link (Team page anchor)}] */}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content }}
+{{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
+
+<div class="dng-container">
+  {{ partial "about/heading.html" (dict "title" $c.title "text" $c.text "page" $page) }}
+  <div class="dng-institutions">
+    {{ range $item := $c.items }}
+    <div class="dng-card dng-institution">
+      {{ with .mark }}<span class="dng-badge{{ if $item.highlight }} dng-badge--solid{{ end }}">{{ . }}</span>{{ end }}
+      {{ if .website }}
+      <a class="dng-logo-plate" href="{{ .website }}" target="_blank" rel="noopener" title="{{ .name }} website">
+        <img src="{{ .logo | relURL }}" alt="{{ .name }} website" loading="lazy">
+      </a>
+      {{ else }}
+      <div class="dng-logo-plate"><img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy"></div>
+      {{ end }}
+      <a class="dng-institution__name" href="{{ .link | default "team/#partners" | relURL }}">{{ .name }}</a>
+    </div>
+    {{ end }}
+  </div>
+</div>

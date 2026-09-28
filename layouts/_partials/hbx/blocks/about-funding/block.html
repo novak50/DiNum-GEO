@@ -1,0 +1,32 @@
+{{/* Funding: funder and programme logos, short description, grant facts.
+     Used on the homepage and the Team page. Defaults come from data/funding.yaml;
+     the block's content: can override any key.
+     content: title, logos: [{src (path under static/), alt, url}], text (markdown),
+              facts: [{label, value}] */}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content }}
+{{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
+{{ $c = merge (hugo.Data.funding | default dict) $c }}
+
+<div class="dng-container">
+  {{ partial "about/heading.html" (dict "title" $c.title "page" $page) }}
+  <div class="dng-card dng-funding">
+    <div class="dng-funding__logos">
+      {{ range $c.logos }}
+        {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener" class="dng-logo-plate">{{ else }}<div class="dng-logo-plate">{{ end }}
+          <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy">
+        {{ if .url }}</a>{{ else }}</div>{{ end }}
+      {{ end }}
+    </div>
+    <div class="dng-funding__body">
+      {{ with $c.text }}<div class="dng-funding__text">{{ . | $page.RenderString (dict "display" "block") }}</div>{{ end }}
+      {{ with $c.facts }}
+      <dl class="dng-facts">
+        {{ range . }}
+        <div><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>
+        {{ end }}
+      </dl>
+      {{ end }}
+    </div>
+  </div>
+</div>

@@ -39,13 +39,17 @@ github.com/novak50/DiNum-GEO (see `.github/workflows/deploy.yml`).
 
 | What | Where | Notes |
 |---|---|---|
-| Homepage ("About") | `content/_index.md` | `sections:` of blocks: intro `markdown` block + `content-collection` "Recent Activities" (3 newest from `activities/`) |
+| Homepage ("About") | `content/_index.md` | Site-specific blocks (layout modelled on demonitor.rgf.bg.ac.rs): `about-hero` (illustration + acronym + full name), `about-intro`, `about-objectives` (RO1–RO5), `about-team` (slugs listed in order; photo, role, affiliation → `team/#member-<slug>`), `about-institutions` "Scientific Research Organisations" (Leading SRO / Partner SRO badges, `highlight: true` = filled badge; logo → `website:` in a new tab, name → `team/#partner-grf/durham/bgs`), `about-funding` (logos, text, grant facts from `data/funding.yaml`). No News/Activities on purpose. All text lives in the front matter. Images: `assets/media/home/`, `static/media/funding/` |
 | News | `content/blog/<slug>/index.md` | list page `content/blog/_index.md` (`view: article-grid`) |
 | Activities | `content/activities/<slug>/index.md` | own page, same layout as News; `show_in_news: true` in front matter also lists the post on News (one copy, no duplicate) |
 | Publications | `content/papers/<slug>/index.md` | list title "Publications", `view: citation`; nav label "Publications", URL stays `papers/` |
-| Team page | `content/team/index.md` | `team-showcase` block (members with `user_groups: [Team]`), partner logo marquee + 3-column partner description grid, funding block |
-| People | `data/authors/<slug>.yaml` | `name`, `role`, `bio`, `links`, `user_groups`; photo at `assets/media/authors/<slug>.jpg` |
+| Team page | `content/team/index.md` | `team-showcase` block (members with `user_groups: [Team]`), partner logo marquee + 3-column partner description grid, `about-funding` block (same as homepage) |
+| Contact page | `content/contact/index.md` | `about-contact` block (layout `layouts/contact/single.html`): contact person = `person:` slug (photo, role, e-mail and links from `data/authors/`), address card, Leaflet + OpenStreetMap tiles map (`map: {lat, lon, zoom}`). An OSM `<iframe>` embed was tried and its tiles stayed blank, so don't go back to it |
+| Funding details | `data/funding.yaml` | Logos + links, text, grant no./budget/duration; shown on the homepage and the Team page |
+| People | `data/authors/<slug>.yaml` | `name`, `role`, `affiliations`, `bio`, `links`, `user_groups`, `weight` (Team page order, lower first); photo at `assets/media/authors/<slug>.jpg` |
+| Favicon | `assets/media/icon.png` | Square PNG (512×512, transparent); `icon.svg` would take priority. Without either, the theme centre-crops `assets/media/logo.png` (navbar logo) |
 | Navbar | `config/_default/menus.yaml` | About, Team, News (`/blog`), Activities (`activities/`), Publications (`papers/`), Contact |
+| Incoming material | `_inbox/` | Novak drops Word docs, logos and source images here; git-ignored and not built by Hugo. Copy (and resize) what the site needs into `static/` or the post folder |
 | Partner logos | `static/media/partners/` | `grf_logo.png` (Faculty of Civil Eng., Belgrade), `ub_logo.png`, `durham_logo.png`, `bgs_logo.png`; in content use `{{< relimg "media/partners/x.png" "alt" >}}` |
 
 ### Team members (`data/authors/`)
@@ -105,6 +109,8 @@ Copy the front matter of an existing post (e.g. `content/blog/icsmge/index.md`):
    team-showcase override).
 6. Go template comments (`{{/* */}}`) never reach the HTML, so they can't be
    used as markers to check which template file is active.
+7. `disableAliases: true` is set in `config/_default/hugo.yaml`, so `aliases:`
+   in front matter does nothing. Moving a post changes its URL with no redirect.
 
 ## Theme overrides in this repo
 
@@ -118,7 +124,7 @@ blocks live in the module's `blox/<name>/block.html` and are mounted at
 |---|---|
 | `layouts/_partials/hbx/blocks/team-showcase/block.html` | Filter by `user_groups`; link a member only if their author page exists; subpath-safe links |
 | `layouts/_partials/page_author.html` | Author row on paper pages: Team members as cards, others as plain text, aligned |
-| `layouts/_partials/page_author_card.html` | Subpath-safe profile link |
+| `layouts/_partials/page_author_card.html` | Subpath-safe profile link; no bio in the author strip under posts (bio only on the author page) |
 | `layouts/_partials/views/card.html` | No empty grey image box when a post has no image |
 | `layouts/_partials/views/article-grid--start.html` | A list with a single post uses one full-width column |
 | `layouts/blog/list.html` | News list also includes Activities posts with `show_in_news: true` |
@@ -126,22 +132,17 @@ blocks live in the module's `blox/<name>/block.html` and are mounted at
 | `layouts/team/single.html` | Renders the Team page's `sections:` |
 | `layouts/_shortcodes/relimg.html` | `<img>` with a subpath-safe `src` for files in `static/` |
 | `layouts/_partials/hooks/head-end/github-button.html` | GitHub buttons script |
+| `layouts/_partials/hbx/blocks/about-*/block.html`, `layouts/_partials/about/heading.html` | Homepage and Contact page blocks (new, not theme copies) |
+| `layouts/contact/single.html` | Renders the Contact page's `sections:` |
+| `assets/css/hbx/blocks/about/style.css` | Homepage styles, bundled automatically by the theme. The theme gives these sections the class `blox-_`, so the CSS selects them with `section.hbb-section:has(> .dng-container)`. Tinted sections use `design.css_class: dng-tint`; don't use `design.background.color.dark`, because the theme applies it with the OS media query (pitfall 3) |
+
+Member affiliations (shown on the homepage) are the `affiliations:` field in
+`data/authors/*.yaml`. The Team page hides them (`show_organizations: false`).
 
 ## Open items
 
-- **About page (homepage) redesign:** Novak will share a reference website (URL
-  plus screenshots) whose layout he likes. Rebuild the layout with DiNum-GEO's
-  own text, images and colours; don't copy the other site's branding, wording
-  or photos, and say up front if an effect (heavy animation, video) isn't
-  worth it on this theme.
-- The navbar **Contact** link points to `contact/`, but no `content/contact/`
-  page exists, so it 404s. Create the page (or remove the menu entry) once
-  Novak says what it should contain.
 - Optional: widen the text column on post/paper pages (`max-w-none` in a
   site copy of `single.html`). Discussed, not done.
 - Upcoming posts listed in the source document: a workshop on 22.12.2026 and an
   academic visit to Durham University (Nov–Jan).
 - Replace the `***` publication-link placeholders when Novak sends the links.
-- Check `content/blog/kick_off/index.md`: if its `authors:` list uses
-  `jelena-ninic` / `tijana-jovanovic`, change them to the quoted full names
-  (pitfall 1).

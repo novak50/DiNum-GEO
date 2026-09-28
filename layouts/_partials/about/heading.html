@@ -1,0 +1,10 @@
+{{/* Section heading shared by the homepage (about-*) blocks.
+     Params: title, text (optional, markdown), page */}}
+<div class="dng-heading">
+  {{ with .title }}
+  <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">{{ . | $.page.RenderString }}</h2>
+  {{ end }}
+  {{ with .text }}
+  <p class="dng-heading__text">{{ . | $.page.RenderString }}</p>
+  {{ end }}
+</div>

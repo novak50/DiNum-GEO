@@ -1,0 +1,20 @@
+{{/* Homepage short project description: a lead sentence and a list of points.
+     content: title, lead (markdown), items (list of markdown strings) */}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content }}
+{{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
+
+<div class="dng-container">
+  {{ partial "about/heading.html" (dict "title" $c.title "page" $page) }}
+  {{ with $c.lead }}<p class="dng-lead">{{ . | $page.RenderString }}</p>{{ end }}
+  {{ with $c.items }}
+  <ul class="dng-points">
+    {{ range . }}
+    <li class="dng-card dng-point">
+      <svg class="dng-point__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      <span>{{ . | $page.RenderString }}</span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>

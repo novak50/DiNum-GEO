@@ -2,6 +2,9 @@
 title: Kick-off meeting
 date: 2025-10-17
 
+# Also list this activity on the News page.
+show_in_news: true
+
 authors:
   - me
   - ksenija

@@ -1,0 +1,26 @@
+{{/* Homepage research objectives: icon + code + title + one sentence.
+     content: title, items: [{code, title, text, icon (path under assets/media/)}] */}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content }}
+{{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
+
+<div class="dng-container">
+  {{ partial "about/heading.html" (dict "title" $c.title "text" $c.text "page" $page) }}
+  <div class="dng-objectives">
+    {{ range $c.items }}
+    <div class="dng-card dng-objective">
+      {{ with .icon }}
+        {{ with resources.Get (printf "media/%s" .) }}
+          {{ $icon := .Fit "160x160 png" }}
+          <div class="dng-objective__icon"><img src="{{ $icon.RelPermalink }}" alt="" width="{{ $icon.Width }}" height="{{ $icon.Height }}" loading="lazy"></div>
+        {{ else }}
+          {{ errorf "about-objectives: icon %q not found in assets/media/" . }}
+        {{ end }}
+      {{ end }}
+      {{ with .code }}<p class="dng-objective__code">{{ . }}</p>{{ end }}
+      {{ with .title }}<h3 class="dng-objective__title">{{ . }}</h3>{{ end }}
+      {{ with .text }}<p class="dng-objective__text">{{ . | $page.RenderString }}</p>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>

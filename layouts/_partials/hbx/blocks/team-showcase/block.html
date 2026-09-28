@@ -233,7 +233,8 @@
           {{ $nameSource := $profile.name_given | default $profile.title | default "?" }}
           {{ $initial := cond (gt (len $nameSource) 0) (upper (substr $nameSource 0 1)) "?" }}
 
-          <div class="group relative">
+          {{/* Site override: anchor so the homepage team strip can link to this card */}}
+          <div class="group relative scroll-mt-24" id="member-{{ $profile.slug }}">
             <div class="relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
 
               {{ if $linkExists }}

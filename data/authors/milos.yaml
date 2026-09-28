@@ -1,6 +1,8 @@
 schema: hugoblox/author/v1
 slug: milos
 is_owner: false
+# Order on the Team page (lower first)
+weight: 1
 user_groups:
   - Team
 name:
@@ -10,6 +12,8 @@ name:
 postnominals:
   - PhD
 role: Principal Investigator
+affiliations:
+  - name: Faculty of Civil Engineering, University of Belgrade
 bio: >-
   Miloš is an Assistant Professor at the University of Belgrade, Faculty of
   Civil Engineering, and the Principal Investigator of DiNum-GEO. His

@@ -1,0 +1,99 @@
+{{/* Contact page: main contact person (from data/authors), organisation address,
+     and an OpenStreetMap map (Leaflet, loaded only on this page) with a marker.
+     An <iframe> of openstreetmap.org/export/embed.html was tried first: its tiles
+     stayed blank when embedded in this site, so the map is drawn directly.
+     content: title, text (markdown), person (data/authors slug), person_label,
+              organisation: {name, address (list of lines), logo (path under static/), website},
+              map: {lat, lon, label} */}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content }}
+{{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
+
+<div class="dng-container">
+  {{ partial "about/heading.html" (dict "title" $c.title "text" $c.text "page" $page) }}
+
+  <div class="dng-contact">
+    <div class="dng-contact__col">
+
+      {{ with $c.person }}
+      {{ $p := partial "functions/get_author_profile" (dict "slug" .) }}
+      {{ $email := "" }}
+      {{ range $p.links }}
+        {{ if and (reflect.IsMap .) (hasPrefix (.url | default "") "mailto:") }}{{ $email = strings.TrimPrefix "mailto:" .url }}{{ end }}
+      {{ end }}
+      <div class="dng-card dng-contact-card">
+        {{ with $c.person_label }}<p class="dng-contact__label">{{ . }}</p>{{ end }}
+        <div class="dng-contact-person">
+          <a class="dng-member__photo dng-contact-person__photo" href="{{ printf "team/#member-%s" $p.slug | relURL }}">
+            {{ with $p.avatar }}
+              {{ $img := .Fill "240x240 Center q85 webp" }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $p.title }}" width="120" height="120" loading="lazy">
+            {{ end }}
+          </a>
+          <div>
+            <p class="dng-member__name"><a href="{{ printf "team/#member-%s" $p.slug | relURL }}">{{ $p.title }}</a></p>
+            {{ with $p.role }}<p class="dng-member__role">{{ . }}</p>{{ end }}
+            {{ with $p.affiliations }}{{ with index . 0 }}<p class="dng-member__aff">{{ if reflect.IsMap . }}{{ .name }}{{ else }}{{ . }}{{ end }}</p>{{ end }}{{ end }}
+          </div>
+        </div>
+        {{ with $email }}
+        <a class="dng-contact__email" href="mailto:{{ . }}">
+          {{ partial "functions/get_icon" (dict "name" "at-symbol" "attributes" "class=\"w-5 h-5\"") }}
+          <span>{{ . }}</span>
+        </a>
+        {{ end }}
+        <div class="dng-contact__social">
+          {{ range $p.links }}
+            {{ if and (reflect.IsMap .) .url (not (hasPrefix .url "mailto:")) }}
+            <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .label | default .icon }}" title="{{ .label | default (path.Base .icon | humanize) }}">
+              {{ partial "functions/get_icon" (dict "name" .icon "attributes" "class=\"w-5 h-5\"") }}
+            </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ with $c.organisation }}
+      <div class="dng-card dng-contact-card">
+        <p class="dng-contact__label">Address</p>
+        <div class="dng-contact-org">
+          {{ with .logo }}
+            {{ if $c.organisation.website }}<a class="dng-contact-org__logo" href="{{ $c.organisation.website }}" target="_blank" rel="noopener">{{ else }}<div class="dng-contact-org__logo">{{ end }}
+              <img src="{{ . | relURL }}" alt="{{ $c.organisation.name }}" loading="lazy">
+            {{ if $c.organisation.website }}</a>{{ else }}</div>{{ end }}
+          {{ end }}
+          <address>
+            <strong>{{ .name }}</strong><br>
+            {{ range .address }}{{ . }}<br>{{ end }}
+            {{ with .website }}<a href="{{ . }}" target="_blank" rel="noopener">{{ strings.TrimSuffix "/" (replaceRE `^https?://` "" .) }}</a>{{ end }}
+          </address>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with $c.map }}
+    {{ $lat := float .lat }}
+    {{ $lon := float .lon }}
+    {{ $zoom := .zoom | default 16 }}
+    <div class="dng-card dng-contact-map">
+      <div id="dng-map" class="dng-contact-map__canvas" role="img" aria-label="{{ .label | default "Map" }}"></div>
+      <a class="dng-contact-map__link" href="https://www.openstreetmap.org/?mlat={{ $lat }}&amp;mlon={{ $lon }}#map=17/{{ $lat }}/{{ $lon }}" target="_blank" rel="noopener">View larger map <span aria-hidden="true">→</span></a>
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+      (function () {
+        var pos = [{{ $lat }}, {{ $lon }}];
+        var map = L.map('dng-map', { scrollWheelZoom: false }).setView(pos, {{ $zoom }});
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker(pos).addTo(map){{ with .label }}.bindPopup({{ . }}){{ end }};
+      })();
+    </script>
+    {{ end }}
+  </div>
+</div>

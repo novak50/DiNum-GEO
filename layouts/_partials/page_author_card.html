@@ -67,9 +67,8 @@
     {{end}}
 
 
-    {{ with $profile.bio }}
-    <div class="text-sm text-neutral-700 dark:text-neutral-300">{{ . | markdownify | emojify }}</div>
-    {{ end }}
+    {{/* Site override: no bio here (too long for the author strip under posts);
+         the full bio is on the author's own page. */}}
 
     <div class="text-2xl sm:text-lg pt-1">
       {{ partial "social_links" (dict "Params" (dict "profiles" $profile.links)) }}

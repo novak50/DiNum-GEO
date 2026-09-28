@@ -1,0 +1,21 @@
+# Funding details, shown by the `about-funding` block on the homepage and on
+# the Team page. Edit here once; both pages update. (A page can still override
+# any of these keys in its own block `content:`.)
+logos:
+  - src: "media/funding/science_fund_logo.png"
+    alt: "Science Fund of the Republic of Serbia"
+    url: "https://fondzanauku.gov.rs/?lang=en"
+  - src: "media/funding/diaspora_logo.png"
+    alt: "Diaspora – Visits of Diaspora Scientists"
+    url: "https://fondzanauku.gov.rs/2025/04/dijaspora-istrazivacke-posete-za-finansiranje-odobreno-45-projekata/"
+text: >-
+  DiNum-GEO is funded by the **Science Fund of the Republic of Serbia**
+  under the **Diaspora 2024** programme (Support for Research Visits of
+  Scientists from the Diaspora).
+facts:
+  - label: "Grant No."
+    value: "9029-YF-SAIGE"
+  - label: "Budget"
+    value: "€14,500"
+  - label: "Duration"
+    value: "1 year"

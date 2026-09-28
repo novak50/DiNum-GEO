@@ -1,6 +1,8 @@
 schema: hugoblox/author/v1
 slug: me
 is_owner: true
+# Order on the Team page (lower first)
+weight: 2
 user_groups:
   - Team
 name:
@@ -10,6 +12,8 @@ name:
 postnominals:
   - MSc
 role: Team Member
+affiliations:
+  - name: Faculty of Civil Engineering, University of Belgrade
 bio: >-
   Novak is a Teaching and Research Assistant at the University of Belgrade,
   Faculty of Civil Engineering, with an educational background in

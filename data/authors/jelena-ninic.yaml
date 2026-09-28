@@ -1,5 +1,7 @@
 schema: hugoblox/author/v1
 is_owner: false
+# Order on the Team page (lower first)
+weight: 4
 user_groups:
   - Team
 name:
@@ -7,6 +9,8 @@ name:
   given: Jelena
   family: Ninić
 role: Project Partner
+affiliations:
+  - name: Durham University
 bio: >-
   Jelena is a Professor in Digital Engineering at the Department of
   Engineering, Durham University, UK. Her research integrates

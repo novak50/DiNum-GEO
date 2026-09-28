@@ -67,3 +67,6 @@ Desktop.ini
 
 *.log
 npm-debug.log*
+
+# Raw material from Novak (Word docs, source images); not published
+_inbox/

@@ -1,0 +1,30 @@
+{{/* Homepage hero: full-width illustration with the acronym and full project name.
+     content: acronym, title, image (path under assets/media/), image_alt */}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content }}
+{{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
+
+<div class="dng-hero">
+  {{ with $c.image }}
+    {{ with resources.Get (printf "media/%s" .) }}
+      {{ $sm := .Resize "800x webp q80" }}
+      {{ $md := .Resize "1200x webp q80" }}
+      {{ $lg := .Resize "1600x webp q82" }}
+      <img class="dng-hero__img"
+           src="{{ $lg.RelPermalink }}"
+           srcset="{{ $sm.RelPermalink }} 800w, {{ $md.RelPermalink }} 1200w, {{ $lg.RelPermalink }} 1600w"
+           sizes="100vw"
+           width="{{ $lg.Width }}" height="{{ $lg.Height }}"
+           alt="{{ $c.image_alt }}"
+           fetchpriority="high">
+    {{ else }}
+      {{ errorf "about-hero: image %q not found in assets/media/" . }}
+    {{ end }}
+  {{ end }}
+  <div class="dng-hero__text">
+    <div class="dng-container">
+      {{ with $c.acronym }}<h1 class="dng-hero__acronym">{{ . }}</h1>{{ end }}
+      {{ with $c.title }}<p class="dng-hero__name">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</div>
