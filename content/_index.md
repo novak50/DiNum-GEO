@@ -17,7 +17,7 @@ sections:
       title: "Recent Activities"
       filters:
         folders:
-          - blog
+          - activities
       count: 3
       sort_by: date
       sort_ascending: false

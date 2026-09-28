@@ -2,6 +2,9 @@
 title: First Project Activity – Workshop
 date: 2026-08-24
 
+# Also list this activity on the News page.
+show_in_news: true
+
 authors:
   - me
   - ksenija

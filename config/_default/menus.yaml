@@ -14,7 +14,7 @@ main:
     url: /blog
     weight: 12
   - name: Activities
-    url: /#activities
+    url: activities/
     weight: 13
   - name: Publications
     url: papers/
