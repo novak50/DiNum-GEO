@@ -141,6 +141,9 @@ sections:
           }
           .partner-detail-card p {
             width: 100%;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
             font-size: 0.9rem;
             line-height: 1.6;
             color: rgba(0, 0, 0, 0.7);
