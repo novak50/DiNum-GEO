@@ -16,7 +16,7 @@
         {{ $first := index . 0 }}
         {{ if reflect.IsMap $first }}{{ $aff = $first.name }}{{ else }}{{ $aff = $first }}{{ end }}
       {{ end }}
-      <a class="dng-member" href="{{ printf "%s#member-%s" $teamLink $p.slug | relURL }}">
+      <a class="dng-member" href="{{ printf "%s#member-%s" $teamLink $p.slug | relLangURL }}">
         <div class="dng-member__photo">
           {{ with $p.avatar }}
             {{ $img := .Fill "320x320 Center q85 webp" }}
@@ -32,6 +32,6 @@
     {{ end }}
   </div>
   {{ with $c.link_text }}
-  <div class="dng-more"><a href="{{ $teamLink | relURL }}">{{ . }} <span aria-hidden="true">→</span></a></div>
+  <div class="dng-more"><a href="{{ $teamLink | relLangURL }}">{{ . }} <span aria-hidden="true">→</span></a></div>
   {{ end }}
 </div>

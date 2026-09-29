@@ -1,0 +1,17 @@
+{{/* Site override: compact "EN | SR" switcher instead of the theme's globe
+     dropdown. Each code links to this page in that language, or to that
+     language's homepage when the page has no translation. */}}
+{{ $page := .page }}
+<nav class="dng-lang" aria-label="{{ T "languages" | default "Languages" }}">
+  {{ range $i, $s := hugo.Sites }}
+    {{ $lang := $s.Language.Lang }}
+    {{ if $i }}<span class="dng-lang__sep" aria-hidden="true">|</span>{{ end }}
+    {{ if eq $lang $page.Lang }}
+      <span class="dng-lang__item dng-lang__item--current" aria-current="true" title="{{ $s.Language.Label }}">{{ upper $lang }}</span>
+    {{ else }}
+      {{ $url := $s.Home.RelPermalink }}
+      {{ range $page.Translations }}{{ if eq .Lang $lang }}{{ $url = .RelPermalink }}{{ end }}{{ end }}
+      <a class="dng-lang__item" href="{{ $url }}" hreflang="{{ $lang }}" lang="{{ $lang }}" title="{{ $s.Language.Label }}">{{ upper $lang }}</a>
+    {{ end }}
+  {{ end }}
+</nav>

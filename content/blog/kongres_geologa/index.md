@@ -27,8 +27,8 @@ More about the publication at the link: [Towards Integrated Digital and Numerica
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">
-    <img src="kgs_1.jpg" alt="Presenting DiNum-GEO at the 19th Congress of Geologists of Serbia" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: block;">
-    <img src="kgs_2.jpg" alt="Title slide: Towards integrated digital and numerical modelling for optimization in geotechnical engineering" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: none;">
+    <img src="{{< bundle-url "kgs_1.jpg" >}}" alt="Presenting DiNum-GEO at the 19th Congress of Geologists of Serbia" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: block;">
+    <img src="{{< bundle-url "kgs_2.jpg" >}}" alt="Title slide: Towards integrated digital and numerical modelling for optimization in geotechnical engineering" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: none;">
   </div>
 
   <button onclick="dinumgeoCarouselMove(-1)"

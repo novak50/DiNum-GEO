@@ -1,16 +1,16 @@
 ---
-title: Signing of contract
+title: "Potpisivanje ugovora"
 date: 2025-06-10
 
 authors:
   - me
 
 categories:
-  - Research
+  - Istraživanje
 
 tags:
-  - Academic
-  - Research
+  - Akademsko
+  - Istraživanje
 
 image:
   preview_only: true
@@ -28,10 +28,9 @@ cover:
 
   fade:
     enabled: true
-
 ---
 
-Project activities under the Program of Cooperation between Serbian Science and the Diaspora – Support for Research Visits of Diaspora Scientists began with the signing of the contract at the premises of the Science Fund of the Republic of Serbia on 10.06.2025. The contract signing was attended, on behalf of the DiNum-GEO team, by the project coordinator Assist. Prof. Dr. Miloš Marjanović from the Faculty of Civil Engineering, University of Belgrade. This was a great opportunity to meet researchers from other scientific research institutions, exchange ideas, and hold constructive discussions on improving and developing the scientific system in the Republic of Serbia. More about the event at the link: [Contract signing](https://fondzanauku.gov.rs/2025/07/kick-off-sastanak-povodom-pocetka-realizacije-projekata-u-okviru-programa-dijaspora-istrazivacke-posete/).
+Aktivnosti na projektu u okviru Programa saradnje srpske nauke sa dijasporom – Podrška istraživačkim posetama naučnika iz dijaspore započele su potpisivanjem ugovora u prostorijama Fonda za nauku Republike Srbije 10.06.2025. godine. Potpisivanju ugovora, u ime tima DiNum-GEO, prisustvovao je rukovodilac projekta doc. dr Miloš Marjanović sa Građevinskog fakulteta Univerziteta u Beogradu. Ovo je bila odlična prilika za upoznavanje sa istraživačima iz drugih naučnoistraživačkih organizacija, razmenu ideja i konstruktivne razgovore o unapređenju i razvoju naučnog sistema u Republici Srbiji. Više o događaju na linku: [Potpisivanje ugovora](https://fondzanauku.gov.rs/2025/07/kick-off-sastanak-povodom-pocetka-realizacije-projekata-u-okviru-programa-dijaspora-istrazivacke-posete/).
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">

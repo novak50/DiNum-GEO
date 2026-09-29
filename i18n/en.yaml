@@ -1,0 +1,6 @@
+# Site-specific interface strings (DiNum-GEO templates). The theme's own
+# English strings still apply; these are only the extra keys.
+- id: dng_address
+  translation: Address
+- id: dng_view_larger_map
+  translation: View larger map

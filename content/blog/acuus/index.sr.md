@@ -1,5 +1,5 @@
 ---
-title: ACUUS Conference
+title: "ACUUS konferencija"
 
 date: 2025-11-07
 
@@ -9,17 +9,17 @@ authors:
   - milos
 
 categories:
-  - Research
+  - Istraživanje
 
 tags:
-  - Academic
-  - Research
+  - Akademsko
+  - Istraživanje
 
 image:
   preview_only: true
   caption:
 
-summary: At the world conference “19th World Conference of the Associated Research Centres for the Urban Underground Space,” held from 4 to 7 November 2025 at the Sava Center in Belgrade, the DiNum team presented the paper 'Towards an Advanced Geotechnical Modelling of Block-in-Matrix Rock for Robust Tunnel Design and Construction'
+summary: "Na svetskoj konferenciji „19th World Conference of the Associated Research Centres for the Urban Underground Space”, održanoj od 4. do 7. novembra 2025. u Sava centru u Beogradu, tim DiNum predstavio je rad „Towards an Advanced Geotechnical Modelling of Block-in-Matrix Rock for Robust Tunnel Design and Construction”"
 
 cover:
   image: ACUUS_2.jpeg
@@ -31,11 +31,10 @@ cover:
 
   fade:
     enabled: true
-
 ---
 
-At the world conference “19th World Conference of the Associated Research Centres for the Urban Underground Space,” held from 4 to 7 November 2025 at the Sava Center in Belgrade, the DiNum team presented the paper “Towards an Advanced Geotechnical Modelling of Block-in-Matrix Rock for Robust Tunnel Design and Construction,” in collaboration with the University of Ljubljana. The importance and relevance of the idea that DiNum-GEO promotes, develops, and advances is also reflected in the theme of the conference itself – “Underground mobility and elevated thinking: new opportunities and challenges in the use of urban space” – as well as in all the scientific contributions presented during four extremely productive and inspiring days at the Sava Center. During this conference, the DiNum team had a unique opportunity to meet and exchange ideas and experiences with world experts in the fields of tunnel construction and spatial planning. 
-More about the publication at the link: ***************************************************. 
+Na svetskoj konferenciji „19th World Conference of the Associated Research Centres for the Urban Underground Space”, održanoj od 4. do 7. novembra 2025. godine u Sava centru u Beogradu, tim DiNum je, u saradnji sa Univerzitetom u Ljubljani, predstavio rad „Towards an Advanced Geotechnical Modelling of Block-in-Matrix Rock for Robust Tunnel Design and Construction”. Značaj i aktuelnost ideje koju DiNum-GEO promoviše, razvija i unapređuje ogleda se i u samoj temi konferencije – „Podzemna mobilnost i uzvišeno razmišljanje: nove mogućnosti i izazovi u korišćenju urbanog prostora” – kao i u svim naučnim doprinosima predstavljenim tokom četiri izuzetno produktivna i inspirativna dana u Sava centru. Tokom ove konferencije tim DiNum imao je jedinstvenu priliku da upozna svetske stručnjake u oblasti izgradnje tunela i prostornog planiranja i sa njima razmeni ideje i iskustva.
+Više o publikaciji na linku: ***.
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">

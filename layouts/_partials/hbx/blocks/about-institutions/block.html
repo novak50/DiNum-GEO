@@ -20,7 +20,7 @@
       {{ else }}
       <div class="dng-logo-plate"><img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy"></div>
       {{ end }}
-      <a class="dng-institution__name" href="{{ .link | default "team/#partners" | relURL }}">{{ .name }}</a>
+      <a class="dng-institution__name" href="{{ .link | default "team/#partners" | relLangURL }}">{{ .name }}</a>
     </div>
     {{ end }}
   </div>

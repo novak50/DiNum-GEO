@@ -1,0 +1,9 @@
+{{- /* URL of a file in the current page bundle, e.g. src="{{< bundle-url "photo.jpg" >}}".
+       Needed for raw <img> tags (post carousels): translations share the bundle's
+       files, but Hugo publishes them only once, under the English path, so a plain
+       relative src="photo.jpg" 404s on the /sr/ pages. */ -}}
+{{- with .Page.Resources.Get (.Get 0) -}}
+  {{- .RelPermalink -}}
+{{- else -}}
+  {{- errorf "bundle-url: %q not found next to %s" (.Get 0) .Page.File.Path -}}
+{{- end -}}

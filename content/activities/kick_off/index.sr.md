@@ -1,5 +1,5 @@
 ---
-title: Kick-off meeting
+title: "Kick-off sastanak"
 date: 2025-10-17
 
 # Also list this activity on the News page.
@@ -13,22 +13,20 @@ authors:
   - "Jelena Ninić"
 
 categories:
-  - Research
+  - Istraživanje
 
 tags:
-  - Academic
-  - Research
+  - Akademsko
+  - Istraživanje
 
 image:
   preview_only: true
   caption:
 
 summary:
-
-
 ---
 
-The kick-off meeting of the DiNum-GEO project was held on 16.10.2025 in an online format. The meeting was attended by all members of our multidisciplinary team. This online connection brought together representatives of leading global institutions in the fields of geotechnics, digital engineering, and geospatial data management – the Faculty of Civil Engineering, University of Belgrade, Durham University, and the British Geological Survey. The team from Serbia, together with diaspora partners Dr. Jelena Ninić and Dr. Tijana Jovanović, established a general action plan for the project activities and agreed on details related to the implementation of the research visits.
+Uvodni (kick-off) sastanak projekta DiNum-GEO održan je 16.10.2025. godine u onlajn formatu. Sastanku su prisustvovali svi članovi našeg multidisciplinarnog tima. Ovo onlajn povezivanje okupilo je predstavnike vodećih svetskih institucija u oblastima geotehnike, digitalnog inženjerstva i upravljanja geoprostornim podacima – Građevinskog fakulteta Univerziteta u Beogradu, Univerziteta u Daramu i Britanskog geološkog zavoda. Tim iz Srbije je, zajedno sa partnerima iz dijaspore dr Jelenom Ninić i dr Tijanom Jovanović, utvrdio opšti plan aktivnosti na projektu i dogovorio detalje u vezi sa realizacijom istraživačkih poseta.
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">

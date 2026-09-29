@@ -1,0 +1,19 @@
+# Serbian overrides for data/funding.yaml (merged over it on the /sr/ site).
+logos:
+  - src: "media/funding/science_fund_logo.png"
+    alt: "Fond za nauku Republike Srbije"
+    url: "https://fondzanauku.gov.rs/"
+  - src: "media/funding/diaspora_logo.png"
+    alt: "Dijaspora – istraživačke posete naučnika iz dijaspore"
+    url: "https://fondzanauku.gov.rs/2025/04/dijaspora-istrazivacke-posete-za-finansiranje-odobreno-45-projekata/"
+text: >-
+  Projekat DiNum-GEO finansira **Fond za nauku Republike Srbije** u okviru
+  programa **Dijaspora 2024** (Podrška istraživačkim posetama naučnika iz
+  dijaspore).
+facts:
+  - label: "Broj projekta"
+    value: "9029-YF-SAIGE"
+  - label: "Budžet"
+    value: "14.500 €"
+  - label: "Trajanje"
+    value: "1 godina"

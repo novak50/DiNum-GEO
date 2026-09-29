@@ -5,9 +5,9 @@
 
 {{ if $profile }}
   {{/* If it's a personal site and the profile is owner, link home */}}
-  {{/* Site override: relURL (no leading slash, so relURL actually prepends
+  {{/* Site override: relLangURL (no leading slash, so it actually prepends
        the baseURL subpath) so this stays correct under GitHub Pages. */}}
-  {{ $profile_url := printf "authors/%s/" $profile.slug | relURL }}
+  {{ $profile_url := printf "authors/%s/" $profile.slug | relLangURL }}
   {{ if and (eq $site_type "Person") ($profile.is_owner) }}
     {{ $profile_url = site.BaseURL }}
   {{ end }}

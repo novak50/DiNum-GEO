@@ -110,7 +110,8 @@ hugoblox:
   footer:
     # Footer style variant
     style: minimal # minimal | columns | centered
-    language_switcher: true
+    # Off: the EN | SR switcher lives in the navbar (components/language-chooser.html)
+    language_switcher: false
     # Custom footer text (HTML supported)
     text: ""
 

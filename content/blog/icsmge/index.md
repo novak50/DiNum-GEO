@@ -27,8 +27,8 @@ More about the publication at the link: ***.
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">
-    <img src="icsmge_1.jpg" alt="Presentation of the GIM-to-FEM paper at ICSMGE 2026" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
-    <img src="icsmge_2.jpg" alt="DiNum-GEO team members at ICSMGE 2026 in Vienna" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: none;">
+    <img src="{{< bundle-url "icsmge_1.jpg" >}}" alt="Presentation of the GIM-to-FEM paper at ICSMGE 2026" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
+    <img src="{{< bundle-url "icsmge_2.jpg" >}}" alt="DiNum-GEO team members at ICSMGE 2026 in Vienna" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: none;">
   </div>
 
   <button onclick="dinumgeoCarouselMove(-1)"

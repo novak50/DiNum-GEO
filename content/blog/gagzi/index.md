@@ -38,8 +38,8 @@ More about the publication at the link: ****************************************
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">
-    <img src="GAGZI_1.jpeg" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
-    <img src="GAGZI_2.jpeg" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: none;">
+    <img src="{{< bundle-url "GAGZI_1.jpeg" >}}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
+    <img src="{{< bundle-url "GAGZI_2.jpeg" >}}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: none;">
   </div>
 
   <button onclick="dinumgeoCarouselMove(-1)"

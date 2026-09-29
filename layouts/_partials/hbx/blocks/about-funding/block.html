@@ -6,7 +6,10 @@
 {{ $page := .wcPage }}
 {{ $c := .wcBlock.content }}
 {{ if not (reflect.IsMap $c) }}{{ $c = dict }}{{ end }}
-{{ $c = merge (hugo.Data.funding | default dict) $c }}
+{{/* Serbian (or other language) overrides: data/<lang>/funding.yaml */}}
+{{ $defaults := hugo.Data.funding | default dict }}
+{{ with index hugo.Data site.Language.Lang }}{{ with .funding }}{{ $defaults = merge $defaults . }}{{ end }}{{ end }}
+{{ $c = merge $defaults $c }}
 
 <div class="dng-container">
   {{ partial "about/heading.html" (dict "title" $c.title "page" $page) }}

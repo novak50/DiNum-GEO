@@ -1,0 +1,21 @@
+# Serbian navigation (same links as menus.en.yaml; the theme adds the /sr/ prefix).
+main:
+  - name: O projektu
+    # pageRef, not url: /  (the theme turns url / into /sr/DiNum-GEO/, a 404)
+    pageRef: /
+    weight: 10
+  - name: Tim
+    url: team/
+    weight: 11
+  - name: Vesti
+    url: blog/
+    weight: 12
+  - name: Aktivnosti
+    url: activities/
+    weight: 13
+  - name: Publikacije
+    url: papers/
+    weight: 20
+  - name: Kontakt
+    url: contact/
+    weight: 30

@@ -35,10 +35,10 @@ The workshop brought together interested students, colleagues from other faculti
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">
-    <img src="workshop_1.jpg" alt="Workshop participants in the lecture hall" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
-    <img src="workshop_2.jpg" alt="Dr Tijana Jovanović presenting" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: none;">
-    <img src="workshop_3.jpg" alt="Prof. Dr Jelena Ninić presenting" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: none;">
-    <img src="workshop_4.jpg" alt="The DiNum-GEO team at the workshop" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: none;">
+    <img src="{{< bundle-url "workshop_1.jpg" >}}" alt="Workshop participants in the lecture hall" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
+    <img src="{{< bundle-url "workshop_2.jpg" >}}" alt="Dr Tijana Jovanović presenting" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: none;">
+    <img src="{{< bundle-url "workshop_3.jpg" >}}" alt="Prof. Dr Jelena Ninić presenting" style="width: 100%; height: 400px; object-fit: contain; background: #f3f4f6; border-radius: 8px; display: none;">
+    <img src="{{< bundle-url "workshop_4.jpg" >}}" alt="The DiNum-GEO team at the workshop" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: none;">
   </div>
 
   <button onclick="dinumgeoCarouselMove(-1)"

@@ -1,16 +1,16 @@
 ---
-title: SGD Award
+title: "Nagrada SGD"
 date: 2026-03-06
 
 authors:
   - ksenija
 
 categories:
-  - Research
+  - Istraživanje
 
 tags:
-  - Academic
-  - Research
+  - Akademsko
+  - Istraživanje
 
 image:
   preview_only: true
@@ -30,10 +30,9 @@ cover:
     enabled: true
 ---
 
-On 06.03.2026, at the regular Assembly of the Serbian Geological Society, DiNum team member Ksenija Micić received the first prize of the Serbian Geological Society for the best scientific paper by young geologists and students for 2025 , for the paper “3D Voxel Lithological Modelling in a GIS Environment: The Influence of the Extent and Spatial Distribution of Exploratory Boreholes.” This recognition is further proof that the DiNum team is on the right scientific path, and serves as an incentive for all young colleagues to value their effort and work, to invest in their own progress and the progress of their research teams, and to continuously strengthen and improve the scientific system in the Republic of Serbia. 
-More about the event at the link: [SGD](
+Na redovnom Zboru Srpskog geološkog društva, održanom 06.03.2026. godine, članica tima DiNum Ksenija Micić dobila je prvu nagradu Srpskog geološkog društva za najbolji naučni rad mladih geologa i studenata za 2025. godinu, za rad „3D litološko modeliranje u GIS okruženju: uticaj obima i prostornog rasporeda istražnih bušotina”. Ovo priznanje je još jedan dokaz da je tim DiNum na pravom naučnom putu i podsticaj svim mladim kolegama da cene svoj trud i rad, da ulažu u sopstveni napredak i napredak svojih istraživačkih timova i da neprestano jačaju i unapređuju naučni sistem Republike Srbije.
+Više o događaju na linku: [SGD](
 https://sgd.rs/%d0%b3%d0%be%d0%b4%d0%b8%d1%88%d1%9a%d0%b8-%d0%ba%d0%be%d0%bd%d0%ba%d1%83%d1%80%d1%81-%d0%b7%d0%b0-%d0%bd%d0%b0%d1%98%d0%b1%d0%be%d1%99%d0%b8-%d1%80%d0%b0%d0%b4-%d0%bc%d0%bb%d0%b0%d0%b4%d0%b8%d1%85/).
-
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">

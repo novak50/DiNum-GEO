@@ -27,3 +27,17 @@ mounts:
     target: layouts
   - source: assets
     target: assets
+  # Content: the normal mount, plus the English publications mounted a second
+  # time into the Serbian site, so Publikacije lists them (in English) without
+  # keeping Serbian copies. The papers list page itself is translated in
+  # content/papers/_index.sr.md, so it is excluded from the second mount.
+  - source: content
+    target: content
+  - source: content/papers
+    target: content/papers
+    sites:
+      matrix:
+        languages: [sr]
+    files:
+      - '! _index.md'
+      - '! **.sr.md'

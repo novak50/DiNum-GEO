@@ -37,8 +37,8 @@ More about the publication at the link: ****************************************
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">
-    <img src="SETC_1.jpg" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
-    <img src="SETC_2.jpeg" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
+    <img src="{{< bundle-url "SETC_1.jpg" >}}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
+    <img src="{{< bundle-url "SETC_2.jpeg" >}}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; display: block;">
   </div>
 
   <button onclick="dinumgeoCarouselMove(-1)"

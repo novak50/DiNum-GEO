@@ -1,0 +1,170 @@
+# Serbian (Latin) interface strings. The theme has no Serbian file; anything
+# missing here falls back to English. Keys: see the theme's i18n/en.yaml.
+
+# Navigation
+- id: toggle_navigation
+  translation: Prikaži/sakrij navigaciju
+- id: table_of_contents
+  translation: Sadržaj
+- id: on_this_page
+  translation: Na ovoj stranici
+- id: back_to_top
+  translation: Nazad na vrh
+- id: home
+  translation: Početna
+- id: close
+  translation: Zatvori
+- id: languages
+  translation: Jezici
+
+# General
+- id: related
+  translation: Povezano
+- id: minute_read
+  translation: min čitanja
+- id: previous
+  translation: Prethodno
+- id: next
+  translation: Sledeće
+- id: figure
+  translation: 'Slika %d:'
+
+# Themes
+- id: theme_selector
+  translation: Podešavanja prikaza
+- id: theme_light
+  translation: Svetla
+- id: theme_dark
+  translation: Tamna
+- id: theme_auto
+  translation: Automatski
+
+# Buttons
+- id: btn_pdf
+  translation: PDF
+- id: btn_cite
+  translation: Citiraj
+- id: btn_slides
+  translation: Slajdovi
+- id: btn_video
+  translation: Video
+- id: btn_code
+  translation: Kod
+- id: btn_dataset
+  translation: Podaci
+- id: btn_project
+  translation: Projekat
+- id: btn_poster
+  translation: Poster
+- id: btn_source
+  translation: Izvorni dokument
+- id: btn_copy
+  translation: Kopiraj
+- id: btn_copied
+  translation: Kopirano
+- id: btn_download
+  translation: Preuzmi
+- id: copy_link
+  translation: Kopiraj link
+- id: copy_citation
+  translation: Kopiraj citat
+- id: how_to_cite
+  translation: Kako citirati
+- id: download_cite_bib
+  translation: Preuzmi cite.bib
+
+# Profiles
+- id: interests
+  translation: Interesovanja
+- id: education
+  translation: Obrazovanje
+- id: user_profile_latest
+  translation: Najnovije
+
+# Lists
+- id: read_more
+  translation: Pročitaj više
+- id: more_pages
+  translation: Pogledaj sve
+- id: more_posts
+  translation: Sve objave
+- id: more_talks
+  translation: Svi događaji
+- id: more_publications
+  translation: Sve publikacije
+
+# Publication/Event details
+- id: abstract
+  translation: Apstrakt
+- id: publication
+  translation: Publikacija
+- id: publication_type
+  translation: Vrsta
+- id: date
+  translation: Datum
+- id: last_updated
+  translation: Poslednja izmena
+- id: event
+  translation: Događaj
+- id: location
+  translation: Lokacija
+- id: pub_paper_conference
+  translation: Rad na konferenciji
+- id: pub_article_journal
+  translation: Rad u časopisu
+- id: pub_article
+  translation: Preprint
+- id: pub_report
+  translation: Izveštaj
+- id: pub_book
+  translation: Knjiga
+- id: pub_chapter
+  translation: Poglavlje u knjizi
+- id: pub_thesis
+  translation: Teza
+- id: pub_patent
+  translation: Patent
+
+# Content types
+- id: posts
+  translation: Objave
+- id: publications
+  translation: Publikacije
+- id: talks
+  translation: Događaji
+- id: projects
+  translation: Projekti
+- id: slides
+  translation: Prezentacije
+- id: authors
+  translation: Autori
+
+# Search
+- id: search
+  translation: Pretraga
+- id: search_placeholder
+  translation: Pretraži...
+- id: search_results
+  translation: pronađenih rezultata
+- id: search_no_results
+  translation: Nema rezultata
+- id: search_common_queries
+  translation: Česte pretrage
+
+# Error 404
+- id: page_not_found
+  translation: Stranica nije pronađena
+- id: 404_recommendations
+  translation: Možda ste tražili nešto od ovoga?
+
+# Footer
+- id: published_with
+  translation: Napravljeno pomoću {hugoblox}.
+- id: poweredby_button
+  translation: 'Napravite svoj →'
+
+# ---- Site-specific strings (DiNum-GEO templates) ----
+- id: dng_address
+  translation: Adresa
+- id: dng_view_larger_map
+  translation: Prikaži veću mapu

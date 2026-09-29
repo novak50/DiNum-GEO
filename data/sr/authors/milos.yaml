@@ -1,0 +1,16 @@
+# Serbian overrides for data/authors/milos.yaml (merged over it on the /sr/ site).
+role: Rukovodilac projekta
+affiliations:
+  - name: Građevinski fakultet, Univerzitet u Beogradu
+bio: >-
+  Miloš je docent na Građevinskom fakultetu Univerziteta u Beogradu i
+  rukovodilac projekta DiNum-GEO. Njegova ekspertiza objedinjuje geotehničko
+  inženjerstvo, mehaniku tla i napredno numeričko modeliranje temelja i
+  podzemnih konstrukcija metodom konačnih elemenata (MKE). Ima i veliko
+  iskustvo u programiranju i razvoju integrisanih rešenja za automatizaciju
+  numeričkih simulacija. U okviru projekta DiNum-GEO, njegovo geotehničko
+  znanje, udruženo sa iskustvom u računarstvu i razvoju softvera, posebno je
+  važno za unapređenje numeričkih modela i integraciju digitalnih alata.
+  Rukovodi razvojem digitalnih i numeričkih modela projekta i glavni je
+  projektant integrisanih rešenja koja čine osnovu automatizovanog okvira
+  za modeliranje.

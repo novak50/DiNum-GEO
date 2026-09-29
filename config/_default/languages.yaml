@@ -2,21 +2,28 @@
 #   Create a section for each of your site's languages.
 #   Documentation: https://docs.hugoblox.com/reference/language/
 
-# Default language
+# Default language: English, served at the site root (/DiNum-GEO/).
 en:
   locale: en-us
-  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  #contentDir: content/en
+  label: English
+  weight: 1
 
-# Uncomment the lines below to configure your website in a second language.
-#zh:
-#  locale: zh-Hans
-#  contentDir: content/zh
-#  title: Chinese website title...
-#  params:
-#    description: Site description in Chinese...
-#  menu:
-#    main:
-#      - name: 传
-#        url: '#about'
-#        weight: 1
+# Serbian (Latin script), served under /DiNum-GEO/sr/.
+# Translations live next to the English file with `.sr` in the name
+# (content/blog/x/index.sr.md); a page without one doesn't exist in Serbian.
+# Menus: config/_default/menus.en.yaml and menus.sr.yaml.
+# Publications are shown in English on both sites (content mount in module.yaml).
+sr:
+  locale: sr-Latn
+  label: Srpski
+  weight: 2
+  params:
+    hugoblox:
+      identity:
+        tagline: "Integracija digitalnih i numeričkih modela za optimizaciju u geotehnici"
+        description: "DiNum-GEO je istraživački projekat koji razvija računarski
+          okvir koji povezuje digitalne modele terena sa probabilističkim
+          numeričkim simulacijama podzemnih konstrukcija, uz dalje povezivanje
+          sa informacionim modelima objekata (BIM)."
+      copyright:
+        notice: "© {year} {name}. Ovo delo je licencirano pod {license}"

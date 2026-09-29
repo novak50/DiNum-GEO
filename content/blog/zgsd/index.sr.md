@@ -1,16 +1,16 @@
 ---
-title: ZGSD Paper presentation
+title: "Predstavljanje rada na Zboru SGD"
 date: 2025-12-24
 
 authors:
   - ksenija
 
 categories:
-  - Research
+  - Istraživanje
 
 tags:
-  - Academic
-  - Research
+  - Akademsko
+  - Istraživanje
 
 image:
   preview_only: true
@@ -29,14 +29,11 @@ cover:
 
   fade:
     enabled: true
-
 ---
 
-Considering that engineering-geological ground modelling plays a very important role in the DiNum-GEO concept and methodology, the project results were also presented to the geological audience at the Assembly of the Serbian Geological Society, held on 24.12.2025 at the premises of the Faculty of Mining and Geology. On this occasion, team member and doctoral student at the Department of Geotechnics of this faculty, Ksenija Micić, presented the paper “3D Voxel Lithological Modelling in a GIS Environment: The Influence of the Extent and Spatial Distribution of Exploratory Boreholes,” which was published in the nationally significant journal “Proceedings of the Serbian Geological Society.” In addition to establishing scientific cooperation with diaspora partners, strengthening cooperation with colleagues and experts from the University of Belgrade is also of great importance to the DiNum team, to which participation in this event significantly contributed. 
-More about the event at the link: https://sgd.rs/odrzan-redovni-zbor-srpskog-geolosko/.
-More about the publication at the link: [3D Voxel-Based Lithological Modelling in GIS]({{< relref "/papers/zsgd-2026-voxel-lithological-modelling/index.md" >}}). 
-
-
+S obzirom na to da inženjerskogeološko modeliranje terena ima veoma važnu ulogu u konceptu i metodologiji projekta DiNum-GEO, rezultati projekta predstavljeni su i geološkoj publici na Zboru Srpskog geološkog društva, održanom 24.12.2025. godine u prostorijama Rudarsko-geološkog fakulteta. Tom prilikom članica tima i doktorantkinja na Katedri za geotehniku ovog fakulteta, Ksenija Micić, predstavila je rad „3D litološko modeliranje u GIS okruženju: uticaj obima i prostornog rasporeda istražnih bušotina”, objavljen u časopisu nacionalnog značaja „Zapisnici Srpskog geološkog društva”. Pored uspostavljanja naučne saradnje sa partnerima iz dijaspore, za tim DiNum je od velikog značaja i jačanje saradnje sa kolegama i stručnjacima sa Univerziteta u Beogradu, čemu je učešće na ovom događaju značajno doprinelo.
+Više o događaju na linku: https://sgd.rs/odrzan-redovni-zbor-srpskog-geolosko/.
+Više o publikaciji na linku: [3D litološko modeliranje u GIS okruženju]({{< relref "/papers/zsgd-2026-voxel-lithological-modelling/index.md" >}}).
 
 <div style="position: relative; max-width: 700px; margin: 0 auto;">
   <div id="carousel-images">

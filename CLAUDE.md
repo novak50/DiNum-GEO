@@ -18,15 +18,17 @@ github.com/novak50/DiNum-GEO (see `.github/workflows/deploy.yml`).
   Only commit when asked.
 - Novak often edits files by hand. Read the current file before changing it,
   and never overwrite his edits with an older version.
-- Content usually arrives as a Word document in **Serbian**; the site is in
-  **English**. Translate faithfully, keep the meaning, fix obvious typos
-  (and wrong years), and mention what you changed.
+- Content usually arrives as a Word document in **Serbian**. The site is
+  **bilingual (English + Serbian Latin)**: write the English page (`index.md`,
+  translated faithfully, keep the meaning, fix obvious typos and wrong years,
+  mention what you changed) **and** the Serbian page (`index.sr.md`, from the
+  Serbian source). See "Serbian version" below.
 - After a change, build the site and check the result in a browser before
   saying it works (see "Build and preview").
 
 ## Build and preview
 
-- Hugo **extended v0.162.0**. Theme code comes from Hugo Modules pinned in
+- Hugo **extended v0.162.0** (v0.163.3 is installed locally and builds fine). Theme code comes from Hugo Modules pinned in
   `go.mod` (`github.com/HugoBlox/kit/modules/blox@v0.0.0-20260527025321-61f41d3667f1`).
 - Preview: `hugo server`, then open http://localhost:1313/DiNum-GEO/.
 - Production-like build: `hugo --gc --minify` (output in `public/`, ignored by git).
@@ -43,12 +45,12 @@ github.com/novak50/DiNum-GEO (see `.github/workflows/deploy.yml`).
 | News | `content/blog/<slug>/index.md` | list page `content/blog/_index.md` (`view: article-grid`) |
 | Activities | `content/activities/<slug>/index.md` | own page, same layout as News; `show_in_news: true` in front matter also lists the post on News (one copy, no duplicate) |
 | Publications | `content/papers/<slug>/index.md` | list title "Publications", `view: citation`; nav label "Publications", URL stays `papers/` |
-| Team page | `content/team/index.md` | `team-showcase` block (members with `user_groups: [Team]`), partner logo marquee + 3-column partner description grid, `about-funding` block (same as homepage) |
+| Team page | `content/team/index.md` | `team-showcase` block (members with `user_groups: [Team]`, ordered by `weight`), 3-column partner description grid (anchors `#partner-grf/durham/bgs`), `about-funding` block (same as homepage) |
 | Contact page | `content/contact/index.md` | `about-contact` block (layout `layouts/contact/single.html`): contact person = `person:` slug (photo, role, e-mail and links from `data/authors/`), address card, Leaflet + OpenStreetMap tiles map (`map: {lat, lon, zoom}`). An OSM `<iframe>` embed was tried and its tiles stayed blank, so don't go back to it |
 | Funding details | `data/funding.yaml` | Logos + links, text, grant no./budget/duration; shown on the homepage and the Team page |
 | People | `data/authors/<slug>.yaml` | `name`, `role`, `affiliations`, `bio`, `links`, `user_groups`, `weight` (Team page order, lower first); photo at `assets/media/authors/<slug>.jpg` |
 | Favicon | `assets/media/icon.png` | Square PNG (512×512, transparent); `icon.svg` would take priority. Without either, the theme centre-crops `assets/media/logo.png` (navbar logo) |
-| Navbar | `config/_default/menus.yaml` | About, Team, News (`/blog`), Activities (`activities/`), Publications (`papers/`), Contact |
+| Navbar | `config/_default/menus.en.yaml`, `menus.sr.yaml` | About, Team, News (`/blog`), Activities (`activities/`), Publications (`papers/`), Contact; Serbian: O projektu, Tim, Vesti, Aktivnosti, Publikacije, Kontakt. EN \| SR switcher on the right |
 | Incoming material | `_inbox/` | Novak drops Word docs, logos and source images here; git-ignored and not built by Hugo. Copy (and resize) what the site needs into `static/` or the post folder |
 | Partner logos | `static/media/partners/` | `grf_logo.png` (Faculty of Civil Eng., Belgrade), `ub_logo.png`, `durham_logo.png`, `bgs_logo.png`; in content use `{{< relimg "media/partners/x.png" "alt" >}}` |
 
@@ -78,10 +80,38 @@ Copy the front matter of an existing post (e.g. `content/blog/icsmge/index.md`):
   `featured.*` in that folder (or `cover.image` / `image.filename` in front
   matter); `cover:` gives the big banner on the post page. Posts with several
   photos use the inline HTML carousel copied from `content/blog/acuus/index.md`
-  (`dinumgeoCarouselMove`). No photo at all is fine: the card then simply has
-  no image area.
+  (`dinumgeoCarouselMove`); its images are written
+  `src="{{< bundle-url "photo.jpg" >}}"`, never a bare `src="photo.jpg"`
+  (pitfall 8). No photo at all is fine: the card then simply has no image area.
+- Write the Serbian `index.sr.md` in the same folder: same front matter except
+  `title`, `summary`, `categories: [Istraživanje]`, `tags: [Akademsko, Istraživanje]`;
+  same carousel with Serbian alt texts. Photos are shared, don't copy them.
 - Unknown links from the source document are kept as the literal placeholder
-  `More about the publication at the link: ***.` until Novak supplies them.
+  `More about the publication at the link: ***.` until Novak supplies them
+  (Serbian: `Više o publikaciji na linku: ***.`).
+
+## Serbian version (multilingual setup)
+
+- English is the default language at `/DiNum-GEO/`; Serbian (Latin) is at
+  `/DiNum-GEO/sr/` (`config/_default/languages.yaml`, `locale: sr-Latn`).
+- A page exists in Serbian only if it has an `.sr.md` twin next to the English
+  file (`content/_index.sr.md`, `content/team/index.sr.md`,
+  `content/contact/index.sr.md`, `content/<section>/_index.sr.md`, every post).
+  The EN | SR switcher goes to the twin, or to the other homepage if none exists.
+- **Publications stay in English** and have no `.sr.md` twins: a second content
+  mount in `config/_default/module.yaml` (`sites.matrix.languages: [sr]`) also
+  publishes `content/papers/` on the Serbian site. Only the list title is
+  translated (`content/papers/_index.sr.md`).
+- Translated data: `data/sr/authors/<slug>.yaml` (role, affiliations, bio;
+  merged over `data/authors/` by the theme) and `data/sr/funding.yaml` (merged
+  over `data/funding.yaml` by the `about-funding` block). New people or
+  funding changes need both files.
+- Interface strings: `i18n/sr.yaml` (theme strings; the theme has no Serbian
+  file) and `i18n/en.yaml` / `i18n/sr.yaml` for our own keys (`dng_*`).
+- Serbian terms used so far: Leading/Partner SRO = Vodeća/Partnerska NIO,
+  Principal Investigator = Rukovodilac projekta, Team Member = Član tima,
+  Project Partner = Partner na projektu, Durham University = Univerzitet u
+  Daramu, British Geological Survey = Britanski geološki zavod, FEM = MKE.
 
 ## Pitfalls we already hit (do not repeat)
 
@@ -92,9 +122,11 @@ Copy the front matter of an existing post (e.g. `content/blog/icsmge/index.md`):
    treats `jelena-ninic` and `"Jelena Ninić"` as two different taxonomy terms
    that both publish to `/authors/jelena-ninic/`; one silently overwrites the
    other and the author page randomly loses posts.
-2. **Links under the subpath:** use `relURL` / `relimg` with paths that do
-   **not** start with `/` (`printf "authors/%s/" $slug | relURL`). A leading
-   `/` skips the `/DiNum-GEO/` prefix and 404s on GitHub Pages.
+2. **Links under the subpath:** use paths that do **not** start with `/`.
+   Links to *pages* use `relLangURL` (`printf "authors/%s/" $slug | relLangURL`),
+   so Serbian pages link to Serbian pages; links to *files in `static/`*
+   (logos) use `relURL` / `relimg`, because static files exist once, without
+   `/sr/`. A leading `/` skips the `/DiNum-GEO/` prefix and 404s on GitHub Pages.
 3. **Dark mode is a class, not the OS setting.** The site toggles a `.dark`
    class on `<html>` (moon icon). In custom CSS use `.dark .my-class {…}`,
    never `@media (prefers-color-scheme: dark)`; the media query made the
@@ -111,6 +143,19 @@ Copy the front matter of an existing post (e.g. `content/blog/icsmge/index.md`):
    used as markers to check which template file is active.
 7. `disableAliases: true` is set in `config/_default/hugo.yaml`, so `aliases:`
    in front matter does nothing. Moving a post changes its URL with no redirect.
+8. **Post photos exist only under the English path.** Translations share a
+   bundle's files, but Hugo publishes them once (`/DiNum-GEO/blog/x/photo.jpg`),
+   so a raw `<img src="photo.jpg">` 404s on `/sr/blog/x/`. Raw HTML images use
+   the `bundle-url` shortcode; theme-processed images (featured, cover) are fine.
+9. **Hugo 0.163 renamed settings:** language `label` (not `languageName`),
+   `.Language.Label`, and mount `sites.matrix` / `files: ['! pattern']`
+   (not `lang` / `excludeFiles`). Changing languages or mounts can crash a
+   running `hugo server`; restart it.
+10. **Serbian menu home link:** `url: /` in `menus.sr.yaml` became
+    `/sr/DiNum-GEO/` (404), because the theme adds the language prefix in front
+    of a root path. The Serbian "O projektu" entry uses `pageRef: /`, which the
+    navbar override resolves to the page's own URL. Other entries use plain
+    relative `url:` values (`team/`, `blog/`), which are fine.
 
 ## Theme overrides in this repo
 
@@ -131,6 +176,9 @@ blocks live in the module's `blox/<name>/block.html` and are mounted at
 | `layouts/papers/list.html` | Centred "Publications" heading, no intro text |
 | `layouts/team/single.html` | Renders the Team page's `sections:` |
 | `layouts/_shortcodes/relimg.html` | `<img>` with a subpath-safe `src` for files in `static/` |
+| `layouts/_shortcodes/bundle-url.html` | URL of a file in the page bundle, for raw `<img>` tags in carousels (pitfall 8) |
+| `layouts/_partials/components/headers/navbar.html` | Theme navbar, changed to show the language switcher on every page (`hugo.IsMultilingual` instead of `.IsTranslated`) and to use the page's own URL for menu entries defined with `pageRef` |
+| `layouts/_partials/components/language-chooser.html` | Compact EN \| SR switcher (styles at the end of `assets/css/hbx/blocks/about/style.css`); the footer switcher is off in `params.yaml` |
 | `layouts/_partials/hooks/head-end/github-button.html` | GitHub buttons script |
 | `layouts/_partials/hbx/blocks/about-*/block.html`, `layouts/_partials/about/heading.html` | Homepage and Contact page blocks (new, not theme copies) |
 | `layouts/contact/single.html` | Renders the Contact page's `sections:` |
